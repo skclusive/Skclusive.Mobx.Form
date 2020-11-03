@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <VersionPrefix>5.0.0-rc2</VersionPrefix>
+    <VersionSuffix>$(VersionSuffix)</VersionSuffix>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Skclusive.Mobx.Form</AssemblyName>
+    <PackageId>Skclusive.Mobx.Form</PackageId>
+    <RootNamespace>Skclusive.Mobx.Form</RootNamespace>
+    <Description>Observable StateTree.JsonSchema library for Blazor</Description>
+    <Authors>Skclusive</Authors>
+    <Company>Skclusive</Company>
+    <Copyright>Skclusive</Copyright>
+    <PackageTags>blazor mobx mobx-state-tree state</PackageTags>
+    <PackageProjectUrl>https://github.com/skclusive/Skclusive.Mobx.Form</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/skclusive/Skclusive.Mobx.Form</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Skclusive.Mobx.StateTree" Version="5.0.0-rc2" />
+    <!-- <PackageReference Include="Skclusive.Mobx.JsonSchema" Version="5.0.0-rc2" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ProjectReference Include="..\..\Skclusive.Mobx.StateTree\src\StateTree.csproj" Version="5.0.0-rc2" /> -->
+<!--     <ProjectReference Include="..\..\Skclusive.Mobx.JsonSchema\src\JsonSchema.csproj" Version="5.0.0-rc2" />-->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Skclusive.Mobx.JsonSchema\src\JsonSchema.csproj" />
+  </ItemGroup>
+</Project>
