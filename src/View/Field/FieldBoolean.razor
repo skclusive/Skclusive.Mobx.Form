@@ -1,0 +1,29 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<div style="width: 100%">
+    <FormControlLabel
+        Label="@Field.Title">
+        <Switch
+            Checked="@Checked"
+            Color="@Color.Primary"
+            OnChange="@ToggleChecked" />
+    </FormControlLabel>
+    <FieldError
+        Field="@Field" />
+</div>
+
+@code
+{
+    [Parameter]
+    public IBooleanObservable Field { set; get; }
+
+    private bool Checked => Field.Value;
+
+    private void ToggleChecked(ChangeEventArgs args)
+    {
+        Field.SyncData(!Checked);
+    }
+
+    private string Helper => string.Join("\n", Field.Errors);
+}

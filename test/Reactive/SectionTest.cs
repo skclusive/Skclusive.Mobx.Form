@@ -13,8 +13,8 @@ namespace Skclusive.Mobx.Form.Tests
 
                 Selected = true,
 
-                Outlines =  new Outline[]
-                {
+                Outline =  new Outline
+                (
                     "name",
 
                     "birthdate",
@@ -32,28 +32,28 @@ namespace Skclusive.Mobx.Form.Tests
 
                         "color"
                     }
-                }
+                )
             });
 
             Assert.NotNull(section);
 
-            Assert.NotNull(section.Outlines);
+            Assert.NotNull(section.Outline);
 
-            Assert.Equal(3, section.Outlines.Count);
+            Assert.Equal(3, section.Outline.Items.Count);
 
-            Assert.Equal("name", section.Outlines[0].Title);
+            Assert.Equal("name", section.Outline.Items[0].Title);
 
-            Assert.Equal("birthdate", section.Outlines[1].Title);
+            Assert.Equal("birthdate", section.Outline.Items[1].Title);
 
-            Assert.Equal(3, section.Outlines[2].Items.Count);
+            Assert.Equal(3, section.Outline.Items[2].Items.Count);
 
-            Assert.Equal("size", section.Outlines[2].Items[0].Title);
+            Assert.Equal("size", section.Outline.Items[2].Items[0].Title);
 
-            Assert.Equal("three-left", section.Outlines[2].Items[1].Items[0].Title);
+            Assert.Equal("three-left", section.Outline.Items[2].Items[1].Items[0].Title);
 
-            Assert.Equal("three-right", section.Outlines[2].Items[1].Items[1].Title);
+            Assert.Equal("three-right", section.Outline.Items[2].Items[1].Items[1].Title);
 
-            Assert.Equal("color", section.Outlines[2].Items[2].Title);
+            Assert.Equal("color", section.Outline.Items[2].Items[2].Title);
         }
     }
 }

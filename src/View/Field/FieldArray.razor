@@ -1,0 +1,27 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<FormControl
+    Component="fieldset"
+    Error="@(!Field.Valid)"
+    Style="width: 100%;">
+    <FormLabel
+        Component="legend"
+        Style="padding-top: 20px;">
+        @Field.Title
+    </FormLabel>
+    @foreach (var item in Field.Items)
+    {
+        <FieldAny
+            @key="item.Title"
+            Field="@item" />
+    }
+    <FieldError
+        Field="@Field" />
+</FormControl>
+
+@code
+{
+    [Parameter]
+    public IArrayObservable Field { set; get; }
+}

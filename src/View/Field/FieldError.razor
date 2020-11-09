@@ -1,0 +1,19 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+@if (HasError)
+{
+    <FormHelperText Error="true">
+        @Error
+    </FormHelperText>
+}
+
+@code
+{
+    [Parameter]
+    public IAnyObservable Field { set; get; }
+
+    private string Error => string.Join("\n", Field.Errors);
+
+    private bool HasError => !string.IsNullOrWhiteSpace(Error);
+}

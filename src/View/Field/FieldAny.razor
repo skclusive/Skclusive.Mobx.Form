@@ -1,0 +1,29 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+@if (Field is IStringObservable _string)
+{
+    <FieldString Field="_string" />
+}
+else if (Field is IBooleanObservable _boolean)
+{
+    <FieldBoolean Field="_boolean" />
+}
+else if (Field is INumberObservable _number)
+{
+    <FieldNumber Field="_number" />
+}
+else if (Field is IObjectObservable _object)
+{
+    <FieldObject Field="_object" />
+}
+else if (Field is IArrayObservable _array)
+{
+    <FieldArray Field="_array" />
+}
+
+@code
+{
+    [Parameter]
+    public IAnyObservable Field { set; get; }
+}

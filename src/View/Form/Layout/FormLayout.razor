@@ -1,0 +1,27 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<FlexSet
+    Class="@_Class"
+    Style="@_Style"
+    Direction="@Direction">
+    @foreach (var outline in Outlines)
+    {
+        @if (outline.Items == null)
+        {
+            <FlexItem
+                @key="@outline"
+                Center="@Center">
+                @ChildContent(outline.Title)
+            </FlexItem>
+        }
+        else
+        {
+            <FormLayout
+                @key="@outline"
+                Direction="@InverseDirection"
+                Outlines="@outline.Items"
+                ChildContent="@ChildContent" />
+        }
+    }
+</FlexSet>

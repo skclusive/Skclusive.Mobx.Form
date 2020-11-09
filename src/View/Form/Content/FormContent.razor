@@ -1,0 +1,12 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<FormLayout
+    Outlines="@Form.Selected.Outline.Items">
+    <FieldAny @key="context" Field="@Form.GetField(context)" />
+</FormLayout>
+
+@* @foreach (var field in Form.Selected.Outline.FlatOutline())
+{
+    <FieldAny @key="field" Field="@Form.GetField(field)" />
+} *@

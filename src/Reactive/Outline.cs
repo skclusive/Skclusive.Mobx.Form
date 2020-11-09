@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Skclusive.Mobx.Observable;
 using Skclusive.Mobx.StateTree;
 
@@ -43,5 +44,23 @@ namespace Skclusive.Mobx.Form
             .Snapshot(() => new Outline())
             .Mutable(o => o.Title, Types.Maybe(Types.String))
             .Mutable(o => o.Items, Types.Late("LateOutlineType", () => Types.Maybe(Types.List(OutlineType))));
+    }
+
+    public static class OutlineExtensions
+    {
+        public static IEnumerable<string> FlatOutline(this IOutlineObservable outline)
+        {
+            if (outline.Items == null)
+            {
+                yield return outline.Title;
+            }
+            else
+            {
+                foreach (var title in outline.Items.SelectMany(item => FlatOutline(item)))
+                {
+                    yield return title;
+                }
+            }
+        }
     }
 }

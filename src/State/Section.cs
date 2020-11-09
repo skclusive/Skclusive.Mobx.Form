@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Skclusive.Mobx.Form
+﻿namespace Skclusive.Mobx.Form
 {
     public interface ISectionPrimitive
     {
@@ -12,7 +9,7 @@ namespace Skclusive.Mobx.Form
 
     public interface ISection : ISectionPrimitive
     {
-        IOutline[] Outlines { set; get; }
+        IOutline Outline { set; get; }
     }
 
     public class Section : ISection
@@ -21,6 +18,6 @@ namespace Skclusive.Mobx.Form
 
         public bool Selected { set; get; }
 
-        public IOutline[] Outlines { set; get; }
+        public IOutline Outline { set; get; }
     }
 }

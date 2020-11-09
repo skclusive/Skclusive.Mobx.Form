@@ -1,0 +1,15 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<div style="width: 100%;">
+    @foreach (var property in Field.Properties.Values)
+    {
+        <FieldAny @key="property.Title" Field="@property" />
+    }
+</div>
+
+@code
+{
+    [Parameter]
+    public IObjectObservable Field { set; get; }
+}

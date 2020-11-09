@@ -1,0 +1,34 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<div style="width: 100%">
+    <TextField
+        FullWidth
+        Label="@Field.Title"
+        Value="@Field.Value"
+        Margin="@Margin.Normal"
+        OnChange="@HandleChange"
+        Type="@Type"
+        Error="@(!Field.Valid)"
+        Helper="@Helper"
+        Shrink="@Shrink" />
+</div>
+
+@code
+{
+    [Parameter]
+    public IStringObservable Field { set; get; }
+
+    private string Type => Field.Format == Format.Date ? "date" : "text";
+
+    private bool Shrink => Type == "date";
+
+    private void HandleChange(ChangeEventArgs args)
+    {
+        var value = args.Value?.ToString();
+
+        Field.SyncData(value);
+    }
+
+    private string Helper => string.Join("\n", Field.Errors);
+}

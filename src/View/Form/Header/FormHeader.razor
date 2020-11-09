@@ -1,0 +1,21 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<Tabs
+    Class="@_Class"
+    Style="@_Style"
+    Value="@Selected"
+    OnChange="@HandleChange"
+    IndicatorColor="@IndicatorColor"
+    TextColor="@TextColor"
+    Variant="@TabsVariant.FullWidth"
+    data-any-error="@HasAnySectionError">
+    @foreach (var section in Form?.Sections)
+    {
+        <Tab
+            @key="section.Title"
+            Label="@section.Title"
+            Value="@section.Title"
+            Style="@TabStyle(section)" />
+    }
+</Tabs>

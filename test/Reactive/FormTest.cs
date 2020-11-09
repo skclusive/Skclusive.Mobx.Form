@@ -11,7 +11,7 @@ namespace Skclusive.Mobx.Form.Tests
         public void TestCreate()
         {
             var form = AppTypes.FormType.Create(new Form
-            { 
+            {
                 Sections = new Section[]
                 {
                     new Section
@@ -20,8 +20,8 @@ namespace Skclusive.Mobx.Form.Tests
 
                         Selected = true,
 
-                        Outlines =  new Outline[]
-                        {
+                        Outline =  new Outline
+                        (
                             "name",
 
                             "birthdate",
@@ -32,19 +32,19 @@ namespace Skclusive.Mobx.Form.Tests
 
                                 "color"
                             }
-                        }
+                        )
                     },
 
                     new Section
                     {
                         Title = "Others",
 
-                        Outlines = new Outline[]
-                        {
+                        Outline = new Outline
+                        (
                             "agree",
 
                             "array"
-                        }
+                        )
                     },
                 },
 
@@ -94,7 +94,7 @@ namespace Skclusive.Mobx.Form.Tests
 
                             Const = 10,
 
-                            Enum = new double[] { 1, 3, 5 },
+                            Enum = new double?[] { 1, 3, 5 },
 
                             Value = 6,
 
@@ -133,6 +133,14 @@ namespace Skclusive.Mobx.Form.Tests
             });
 
             Assert.NotNull(form);
+
+            form.Validate();
+
+            Assert.False(form.Valid);
+
+            var fieldError = form.Error;
+
+            Assert.NotNull(fieldError);
         }
     }
 }

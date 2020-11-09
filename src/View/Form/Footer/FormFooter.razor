@@ -1,0 +1,36 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<Grid
+    Class="@_Class"
+    Style="@_Style"
+    Container="true"
+    Spacing="@Spacing.Eight">
+    @if (HasCancel)
+    {
+        <Grid
+            Item="true"
+            ExtraSmall="@GridSize.Six"
+            Small="@GridSize.Two"
+            Class="@_ItemClass"
+            Style="@_ItemStyle">
+            <FormCancel
+                Form="@Form"
+                OnCancel="@OnCancel"
+                Label="@Cancel"
+                Reset="@Reset" />
+        </Grid>
+    }
+    <Grid
+        Item="true"
+        ExtraSmall="@GridSize.Six"
+        Small="@GridSize.Two"
+        Class="@_ItemClass"
+        Style="@_ItemStyle">
+        <FormSubmit
+            Form="@Form"
+            Label="@Submit"
+            OnSubmit="@OnSubmit"
+            OnError="@OnError" />
+    </Grid>
+</Grid>

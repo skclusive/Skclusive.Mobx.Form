@@ -1,0 +1,32 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<div style="width: 100%;">
+    <TextField
+        FullWidth
+        Label="@Field.Title"
+        Value="@Field.Value.ToString()"
+        Margin="@Margin.Normal"
+        OnChange="@HandleChange"
+        Type="number"
+        Error="@(!Field.Valid)"
+        Helper="@Helper" />
+</div>
+
+@code
+{
+    [Parameter]
+    public INumberObservable Field { set; get; }
+
+    private void HandleChange(ChangeEventArgs args)
+    {
+        var value = args.Value?.ToString();
+
+        if (double.TryParse(value, out double number))
+        {
+            Field.SyncData(number);
+        }
+    }
+
+    private string Helper => string.Join("\n", Field.Errors);
+}

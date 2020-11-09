@@ -1,0 +1,30 @@
+@namespace Skclusive.Mobx.Form
+@inherits MaterialComponentBase
+
+<div class="root">
+    <Grid
+        Container
+        Spacing="@Spacing.Four"
+        Direction="@Direction.Column">
+        <Grid
+            Item>
+            <FormHeader
+                Form="@Form" />
+        </Grid>
+        <Grid
+            Item>
+            <FormContent
+                Form="@Form" />
+        </Grid>
+        <Grid
+            Item>
+            <FormFooter
+                Form="@Form"
+                Submit="@Submit"
+                Cancel="@Cancel"
+                Reset="@Reset"
+                OnSubmit="@OnSubmit"
+                OnCancel="@OnCancel" />
+        </Grid>
+    </Grid>
+</div>

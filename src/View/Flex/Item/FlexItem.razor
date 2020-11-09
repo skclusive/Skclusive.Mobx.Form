@@ -1,0 +1,18 @@
+﻿@namespace Skclusive.Mobx.Form
+@inherits MaterialComponent
+
+<div
+    class="@_Class"
+    style="@_Style">
+    @if (Center)
+    {
+        <div
+            class="@_CenterClass"
+            style="@_CenterStyle">
+            @ChildContent
+        </div>
+    } else
+    {
+        @ChildContent
+    }
+</div>
