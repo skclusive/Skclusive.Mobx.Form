@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <VersionPrefix>5.0.0-rc2</VersionPrefix>
+    <VersionPrefix>5.0.0-rc4</VersionPrefix>
     <VersionSuffix>$(VersionSuffix)</VersionSuffix>
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Skclusive.Mobx.Form</AssemblyName>
@@ -15,18 +15,18 @@
     <RepositoryUrl>https://github.com/skclusive/Skclusive.Mobx.Form</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Skclusive.Mobx.Component" Version="5.0.0-rc3" />
-    <!-- <PackageReference Include="Skclusive.Mobx.Observable" Version="5.0.0-rc2" /> -->
-    <!-- <PackageReference Include="Skclusive.Mobx.StateTree" Version="5.0.0-rc2" /> -->
-    <!-- <PackageReference Include="Skclusive.Mobx.JsonSchema" Version="5.0.0-rc2" /> -->
-    <!-- <PackageReference Include="Skclusive.Material.Component" Version="5.0.0-rc3" /> -->
+    <PackageReference Include="Skclusive.Mobx.Component" Version="5.0.0-rc4" />
+    <PackageReference Include="Skclusive.Mobx.Observable" Version="5.0.0-rc4" />
+    <PackageReference Include="Skclusive.Mobx.StateTree" Version="5.0.0-rc4" />
+    <PackageReference Include="Skclusive.Mobx.JsonSchema" Version="5.0.0-rc4" />
+    <PackageReference Include="Skclusive.Material.Component" Version="5.0.0-rc4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="5.0.0-rc3" />
-    <!-- <ProjectReference Include="..\..\Skclusive.Mobx.Component\src\Component.csproj" Version="5.0.0-rc3" /> -->
-    <ProjectReference Include="..\..\Skclusive.Mobx.JsonSchema\src\JsonSchema.csproj" />
-    <ProjectReference Include="..\..\Skclusive.Mobx.Observable\src\Observable.csproj" />
-    <ProjectReference Include="..\..\Skclusive.Mobx.StateTree\src\StateTree.csproj" />
-  </ItemGroup>
+  <!-- <ItemGroup>
+    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="5.0.0-rc4" />
+    <ProjectReference Include="..\..\Skclusive.Mobx.Component\src\Component.csproj" Version="5.0.0-rc4" />
+    <ProjectReference Include="..\..\Skclusive.Mobx.JsonSchema\src\JsonSchema.csproj" Version="5.0.0-rc4" />
+    <ProjectReference Include="..\..\Skclusive.Mobx.Observable\src\Observable.csproj" Version="5.0.0-rc4" />
+    <ProjectReference Include="..\..\Skclusive.Mobx.StateTree\src\StateTree.csproj" Version="5.0.0-rc4" />
+  </ItemGroup> -->
 </Project>
