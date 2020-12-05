@@ -6,6 +6,8 @@ namespace Skclusive.Mobx.Form
     {
         public FormStyleProvider() : base
         (
+            priority: 1200,
+
             typeof(FormFooterStyle),
 
             typeof(FlexItemStyle),
